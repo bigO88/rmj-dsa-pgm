@@ -10,6 +10,11 @@ class Node:
         self.data=data
         self.next=None
 class LinkedList:
+    '''
+    Linked List is a linear data structure. Unlike arrays, 
+    linked list elements are not stored at contiguous location; 
+    the elements are linked using pointers.
+    '''
     def __init__(self):
         self.head=None       
 
