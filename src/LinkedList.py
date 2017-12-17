@@ -13,7 +13,7 @@ class LinkedList:
         self.head=None       
 
     def append(self,data):
-        if self.head == None:
+        if self.head is None:
             self.head=Node(data)
         else:
             curr=self.head
@@ -24,10 +24,12 @@ class LinkedList:
                   
     def printList(self):
         curr=self.head
-        while(curr.next != None):
+        if curr is None:
+            print "The list is empty" 
+        
+        while( curr != None ):
             print str(curr.data)
             curr=curr.next
-        print str(curr.data)
         
     def addAtStart(self,data):
         new_node=Node(data)
@@ -36,11 +38,15 @@ class LinkedList:
 
     def exists(self,key):
         curr=self.head
-        while(curr.next != None):
+        pos=1
+        while(curr != None):
             if key == curr.data:
+                print "Key present at: "+str(pos)
                 return True
-            curr=curr.next  
-    
+                break
+            curr=curr.next
+            pos +=1
+        return False      
 
 
 
